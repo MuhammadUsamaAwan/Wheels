@@ -1,0 +1,89 @@
+/////////////////////////////////////
+//REPONSE MANAGER
+@mixin respond($breakpoint) {
+  @if $breakpoint == xs {
+    @media only screen and (max-width: 575px) {
+      @content;
+    }
+  }
+  @if $breakpoint == sm {
+    @media only screen and (max-width: 576px) {
+      @content;
+    }
+  }
+  @if $breakpoint == md {
+    @media only screen and (max-width: 768px) {
+      @content;
+    }
+  }
+  @if $breakpoint == lg {
+    @media only screen and (max-width: 992px) {
+      @content;
+    }
+  }
+  @if $breakpoint == xl {
+    @media only screen and (max-width: 1200px) {
+      @content;
+    }
+  }
+  @if $breakpoint == xxl {
+    @media only screen and (min-width: 1201px) {
+      @content;
+    }
+  }
+}
+
+////////////////////////////////////
+//UTILITIES
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-center--col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+@mixin container {
+  padding: 5rem 30rem;
+  @include respond(xl) {
+    padding: 5rem 8rem;
+  }
+  @include respond(sm) {
+    padding: 5rem 2rem;
+  }
+}
+
+.container {
+  @include container;
+}
+
+.section-container {
+  @include container;
+  padding-top: 15rem;
+}
+
+.ant-spin {
+  @include flex-center;
+}
+
+////////////////////////////////////
+//PADDINGS
+@for $i from 1 to 5 {
+  .pt-#{$i} {
+    padding-top: $i + rem;
+  }
+  .pr-#{$i} {
+    padding-right: $i + rem;
+  }
+  .pb-#{$i} {
+    padding-bottom: $i + rem;
+  }
+  .pl-#{$i} {
+    padding-left: $i + rem;
+  }
+}

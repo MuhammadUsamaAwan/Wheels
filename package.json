@@ -1,0 +1,26 @@
+{
+  "name": "wheels",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.5.1",
+    "antd": "^4.15.3",
+    "axios": "^0.21.1",
+    "js-cookie": "^2.2.1",
+    "next": "10.2.0",
+    "react": "17.0.2",
+    "react-device-detect": "^1.17.0",
+    "react-dom": "17.0.2",
+    "react-google-recaptcha": "^2.1.0",
+    "react-multi-carousel": "^2.6.2",
+    "react-redux": "^7.2.4",
+    "react-toastify": "^7.0.4",
+    "redux": "^4.1.0",
+    "sass": "^1.32.11"
+  }
+}

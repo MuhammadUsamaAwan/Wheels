@@ -1,0 +1,622 @@
+////////////////////////////////////////
+//NAV
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  z-index: 1001;
+  padding: 0 30rem;
+  border-bottom: 1px solid lighten($text, 80);
+  background-color: $bg;
+  @include respond(xl) {
+    padding: 0 8rem;
+  }
+  @include respond(sm) {
+    padding: 0 2rem;
+  }
+  &__logo {
+    a {
+      color: inherit;
+      transition: all 0.3s ease-in;
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+  &__links {
+    display: flex;
+    margin: 0;
+    transition: all 0.3s ease-in;
+    li {
+      list-style: none;
+      align-self: center;
+      margin-bottom: -1px;
+      border-bottom: 2px solid transparent;
+      a {
+        padding: 2rem 0;
+        margin: 0 2rem;
+        display: inline-block;
+        color: inherit;
+      }
+      &:hover {
+        a {
+          color: $link;
+        }
+        border-color: $link;
+      }
+    }
+    &__primary {
+      background-color: $primary;
+      margin-left: 0.5rem;
+      a {
+        color: $bg !important;
+      }
+    }
+    @include respond(lg) {
+      display: none;
+    }
+  }
+  &__menu {
+    display: none;
+    @include respond(lg) {
+      display: block;
+      padding: 1rem 0;
+    }
+    &__link {
+      display: block;
+      color: inherit;
+      padding: 1rem 0;
+    }
+  }
+  &__dropdown-item {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+}
+.ant-drawer-content-wrapper {
+  margin-top: -1rem;
+}
+
+///////////////////////////////////////////////
+//HEADER
+.hero {
+  @include flex-center--col;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url(https://images5.alphacoders.com/772/thumb-1920-772308.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 60vh;
+  padding: 0 5rem;
+  &__heading,
+  &__subtile {
+    text-align: center;
+    line-height: 1.2;
+    color: $bg;
+  }
+  &__heading {
+    margin: 0;
+    font-size: 5rem;
+    @include respond(sm) {
+      font-size: 4rem;
+    }
+  }
+  &__subtile {
+    font-size: 2.3rem;
+    @include respond(sm) {
+      font-size: 2rem;
+    }
+  }
+  .ant-form {
+    padding: 2rem;
+    @include respond(sm) {
+      display: none !important;
+    }
+  }
+  &__form--mobile {
+    display: none;
+    @include respond(sm) {
+      display: block;
+      padding: 2rem;
+    }
+  }
+}
+
+/////////////////////////////////////////////
+//BROSWSE USED CARS
+.browse-used-cars {
+  background-color: $grey;
+}
+
+/////////////////////////////////////////////
+//BROWSE USED CARS CARDS
+.browse-used-cars-card {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  margin-bottom: 3rem;
+  @include respond(md) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+  &__item {
+    background-color: $bg;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 1rem 1rem 1rem 0;
+    transition: all 0.3s ease-in-out;
+    a {
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    &:hover {
+      box-shadow: 0px 0px 10px 0px rgba(84, 84, 84, 0.75);
+      -webkit-box-shadow: 0px 0px 10px 0px rgba(84, 84, 84, 0.75);
+      -moz-box-shadow: 0px 0px 10px 0px rgba(84, 84, 84, 0.75);
+    }
+  }
+}
+
+/////////////////////////////////////////////
+//BROWSE USED CARS TEXT
+.browse-used-cars-text {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  @include respond(md) {
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 3rem;
+  }
+  gap: 2rem;
+  a {
+    color: inherit;
+    transition: all 0.3 ease-in-out;
+    &:hover {
+      font-weight: 600;
+    }
+  }
+}
+
+////////////////////////////////////////////////////
+//SELL ITEM
+.sell-item {
+  border: 1px solid $grey;
+  margin-right: 2rem;
+  &__img-box {
+    position: relative;
+    background-color: $text;
+    @include flex-center;
+    overflow: hidden;
+    &__ribbon {
+      position: absolute;
+      background-color: $secondary;
+      padding: 0.5rem;
+      color: $bg;
+      text-transform: uppercase;
+      top: 0;
+      left: 0;
+    }
+    img {
+      max-width: auto;
+      height: 20rem;
+    }
+  }
+  &__details {
+    padding: 1rem;
+    &__title {
+      font-weight: 700;
+      font-size: 1.8rem;
+    }
+    &__price {
+      color: $tertiary;
+    }
+  }
+}
+
+/////////////////////////////////////////////////////
+//CAR COMPARISON
+.car-comparison {
+  @include container;
+  width: fit-content;
+  &__body {
+    border: 1px solid lighten($text, 80);
+  }
+  &__main {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  &__car {
+    @include flex-center--col;
+    p {
+      font-weight: 700;
+    }
+    @include respond(sm) {
+      img {
+        width: 100%;
+      }
+    }
+  }
+  &__vs {
+    background-color: $secondary;
+    color: $bg;
+    padding: 1rem;
+    border-radius: 50%;
+    font-weight: 700;
+  }
+}
+
+/////////////////////////////////////////
+//NEWS, REVIEWS, DISCUSSIONS
+.news-reviews-discussions {
+  @include container;
+}
+
+.home-news {
+  display: flex;
+  padding-bottom: 2rem;
+  &__content {
+    padding-left: 2rem;
+  }
+  &__title {
+    font-weight: 700;
+    font-size: 1.8rem;
+  }
+  &__date {
+    color: $dark-grey;
+  }
+  img {
+    height: 12rem;
+  }
+}
+
+.car-review {
+  &__container {
+    display: flex;
+    img {
+      height: 9rem;
+      border: 1px solid lighten($text, 80);
+      margin-right: 2rem;
+    }
+    a {
+      display: block;
+    }
+  }
+  &__title {
+    font-weight: 700;
+  }
+  &__car {
+    color: inherit;
+  }
+  &__details {
+    @include flex-center;
+    & > * {
+      padding-right: 1rem;
+    }
+    @include respond(sm) {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+}
+
+.car-discussion {
+  &__title {
+    font-weight: 700;
+    font-size: 1.8rem;
+  }
+  &__details {
+    display: flex;
+    & > * {
+      padding-right: 1rem;
+    }
+  }
+}
+
+//////////////////////////////////////////////////
+//LOGIN
+#components-form-demo-normal-login .login-form {
+  max-width: 300px;
+}
+#components-form-demo-normal-login .login-form-forgot {
+  float: right;
+}
+#components-form-demo-normal-login .ant-col-rtl .login-form-forgot {
+  float: left;
+}
+#components-form-demo-normal-login .login-form-button {
+  width: 100%;
+}
+
+.login-form {
+  @include container;
+  padding-top: 20rem;
+}
+
+/////////////////////////////////////////////////////
+//POST AD
+.post-adv {
+  .ant-card {
+    margin-bottom: 1rem;
+    &-body {
+      transition: all 0.5s ease-in;
+      span {
+        float: right;
+      }
+      &:hover {
+        background-color: $primary;
+        color: $bg;
+      }
+    }
+  }
+}
+
+////////////////////////////////////////////////////
+//BLOG
+.blog {
+  @include container;
+  padding-top: 20rem;
+}
+
+//HEADER
+.header-blog {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  & > *,
+  & a {
+    color: $bg;
+  }
+  &__picture {
+    background-image: url(https://static.pakwheels.com/2021/04/08-2022-Honda-Civic-Sedan-Sport-1200x781-1-1-750x430.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.5s ease;
+    width: 100%;
+    height: 100%;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  &__ribbon {
+    background-color: $secondary;
+    padding: 0 0.5rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  &__content {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 1rem;
+    &__details {
+      display: flex;
+      &__date {
+        padding-left: 2rem;
+        color: $dark-grey2;
+      }
+      &__comments {
+        margin-left: auto;
+      }
+    }
+  }
+}
+
+.header-blogs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 0.5rem;
+  :nth-child(1) {
+    grid-area: 1 / 1 / 5 / 3;
+    & .header-blog {
+      height: 40.5rem;
+    }
+  }
+  :nth-child(2) {
+    grid-area: 1 / 3 / 3 / 5;
+    & .header-blog {
+      height: 20rem;
+    }
+  }
+  :nth-child(3) {
+    grid-area: 3 / 3 / 5 / 4;
+    & .header-blog {
+      height: 20rem;
+    }
+  }
+  :nth-child(4) {
+    grid-area: 3 / 4 / 5 / 5;
+    & .header-blog {
+      height: 20rem;
+    }
+  }
+}
+
+//NORMAL BLOG
+.blog-item {
+  &__img {
+    position: relative;
+    &__ribbon {
+      position: absolute;
+      padding: 0 0.5rem;
+      background-color: $secondary;
+      color: $bg;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  &__content {
+    &__title {
+      color: inherit !important;
+    }
+    h4.ant-typography {
+      margin-bottom: 0;
+    }
+    &__details {
+      display: flex;
+      padding: 1rem 0;
+      &__author {
+        color: inherit;
+      }
+      &__date {
+        padding-left: 2rem;
+        color: $dark-grey;
+      }
+      &__comments {
+        margin-left: auto;
+      }
+    }
+  }
+  &--var1 {
+    display: flex;
+    .blog-item__img {
+      img {
+        height: 15rem;
+        width: auto;
+      }
+    }
+    .blog-item__content {
+      padding-left: 1rem;
+    }
+  }
+  &--var2 {
+    .blog-item__content {
+      padding-top: 1rem;
+    }
+  }
+}
+
+.tab-item-blog {
+  display: flex;
+  & > :last-child {
+    padding-left: 1rem;
+  }
+}
+
+.tab-container-blog {
+  & > * {
+    margin: 1rem 0;
+  }
+}
+
+///////////////////////////////////////////////
+//USED CARS DETAILS
+.used-car-details {
+  background-color: $grey;
+  &__cont {
+    display: flex;
+    & > :first-child {
+      width: 50%;
+      @include respond(md) {
+        width: 100%;
+      }
+    }
+    & > :last-child {
+      margin-left: 2rem;
+      text-align: center;
+      width: 25%;
+      @include respond(md) {
+        width: 100%;
+      }
+    }
+    @include respond(md) {
+      flex-direction: column;
+      & > :last-child {
+        margin: 2rem 0 0 0;
+      }
+    }
+  }
+  &__title {
+    margin: 0;
+    font-size: 3rem;
+  }
+  &__city {
+    color: $primary;
+    margin-bottom: 1rem;
+  }
+  &__img__cont {
+    margin: 2rem 0;
+  }
+  &__img__box {
+    background-color: $text;
+    @include flex-center;
+    height: 100%;
+    position: relative;
+    span {
+      position: absolute;
+      z-index: 1;
+      top: 2rem;
+      right: 2rem;
+      background-color: $bg;
+      padding: 0.5rem;
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+      svg {
+        width: 1.4em;
+        height: 1.4em;
+        fill: $primary;
+        transition: all 0.3s ease-in-out;
+      }
+      &:hover {
+        background-color: darken($bg, 20);
+        svg {
+          fill: $secondary;
+        }
+      }
+    }
+  }
+  &__img {
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 100%;
+    height: auto;
+  }
+  .ant-card {
+    @include respond(md) {
+      margin-top: 1rem;
+    }
+  }
+  .ant-card-body {
+    white-space: nowrap;
+    .ant-statistic-content {
+      font-size: 18px;
+    }
+  }
+  &__specs {
+    margin: 3rem 0;
+    li {
+      list-style: none;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid $grey;
+      border-top: 1px solid $grey;
+      display: flex;
+      justify-content: space-between;
+      p {
+        margin: 0 !important;
+      }
+    }
+    & > :first-child {
+      border-bottom: none !important;
+    }
+    & > :last-child {
+      border-top: none !important;
+    }
+  }
+  &__price {
+    font-size: 2.5rem;
+  }
+}
