@@ -9,7 +9,7 @@ const { TabPane } = Tabs;
 
 const NewsReviewsDiscussions = () => {
   return (
-    <section className="news-reviews-discussions">
+    <section className="container--pad">
       <Title level={2}>News, Reviews & Discussions</Title>
       <Tabs defaultActiveKey="1">
         <TabPane tab="Automotive News" key="1">

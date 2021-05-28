@@ -1,33 +1,38 @@
 /////////////////////////////////////
 //REPONSE MANAGER
 @mixin respond($breakpoint) {
-  @if $breakpoint == xs {
-    @media only screen and (max-width: 575px) {
+  @if $breakpoint == mobile {
+    @media only screen and (max-width: 425px) {
       @content;
     }
   }
-  @if $breakpoint == sm {
-    @media only screen and (max-width: 576px) {
+  @if $breakpoint == tablet {
+    @media only screen and (min-width: 426px) {
       @content;
     }
   }
-  @if $breakpoint == md {
+  @if $breakpoint == mobile-device {
     @media only screen and (max-width: 768px) {
       @content;
     }
   }
-  @if $breakpoint == lg {
-    @media only screen and (max-width: 992px) {
+  @if $breakpoint == laptop-s {
+    @media only screen and (min-width: 769px) {
       @content;
     }
   }
-  @if $breakpoint == xl {
-    @media only screen and (max-width: 1200px) {
+  @if $breakpoint == laptop {
+    @media only screen and (min-width: 1025px) {
       @content;
     }
   }
-  @if $breakpoint == xxl {
-    @media only screen and (min-width: 1201px) {
+  @if $breakpoint == desktop {
+    @media only screen and (min-width: 1441px) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop-l {
+    @media only screen and (min-width: 1921px) {
       @content;
     }
   }
@@ -49,12 +54,25 @@
 }
 
 @mixin container {
-  padding: 5rem 30rem;
-  @include respond(xl) {
-    padding: 5rem 8rem;
+  @include respond(mobile) {
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
-  @include respond(sm) {
-    padding: 5rem 2rem;
+  @include respond(tablet) {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+  @include respond(laptop s) {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+  @include respond(laptop) {
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
+  @include respond(desktop) {
+    padding-left: 20rem;
+    padding-right: 20rem;
   }
 }
 
@@ -62,9 +80,25 @@
   @include container;
 }
 
-.section-container {
+.container--pad {
+  @include container;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.container--section {
   @include container;
   padding-top: 15rem;
+}
+
+.container--section--less {
+  @include container;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+  @include respond(mobile-device) {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
 }
 
 .ant-spin {

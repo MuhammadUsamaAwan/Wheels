@@ -9,7 +9,9 @@ const Home = () => {
     <>
       <Hero />
       <BrowseCars />
-      <FeaturedCars />
+      <div className="container--pad">
+        <FeaturedCars />
+      </div>
       <CarComparison />
       <NewsReviewsDiscussions />
     </>

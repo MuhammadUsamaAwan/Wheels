@@ -19,13 +19,19 @@ const SellBike = () => {
   const img = useSelector(state => state.img);
   const manufacturer = useSelector(state => state.manufacturer);
   useEffect(async () => {
-    if (!isLoggedIn) router.push("/login");
-    else dispatch(getManufacturers(token));
+    if (!isLoggedIn) {
+      toast.error("Login first to post ads");
+      router.push("/login");
+    } else dispatch(getManufacturers(token));
   }, []);
+
+  if (!isLoggedIn) {
+    return <></>;
+  }
 
   if (manufacturer.isLoading)
     return (
-      <div className="section-container">
+      <div className="container--section">
         <LoadingIcon />
       </div>
     );
@@ -48,7 +54,7 @@ const SellBike = () => {
   };
 
   return (
-    <section className="section-container">
+    <section className="container--section--less">
       <Form onFinish={onFinish}>
         <Typography.Title level={2}>Bike Information</Typography.Title>
 

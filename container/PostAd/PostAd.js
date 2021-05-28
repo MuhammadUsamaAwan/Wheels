@@ -3,15 +3,24 @@ import { Card } from "antd";
 import { ArrowRightOutlined } from "@ant-design/icons";
 import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
+import { toast } from "react-toastify";
 
 const PostAd = () => {
   const router = useRouter();
   const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
   useEffect(() => {
-    if (!isLoggedIn) router.push("/login");
+    if (!isLoggedIn) {
+      router.push("/login");
+      toast.error("Login first to post ads");
+    }
   }, []);
+
+  if (!isLoggedIn) {
+    return <></>;
+  }
+
   return (
-    <section className="section-container post-adv">
+    <section className="container--section post-adv">
       <a href="/sell-car">
         <Card className="post-adv__sell-menu">
           Sell Your Car
@@ -38,7 +47,7 @@ const PostAd = () => {
       </a>
       <a href="/sell-truck">
         <Card className="post-adv__sell-menu">
-          Sell Your truck
+          Sell Your Truck
           <ArrowRightOutlined />
         </Card>
       </a>

@@ -7,15 +7,8 @@
   position: fixed;
   width: 100%;
   z-index: 1001;
-  padding: 0 30rem;
   border-bottom: 1px solid lighten($text, 80);
   background-color: $bg;
-  @include respond(xl) {
-    padding: 0 8rem;
-  }
-  @include respond(sm) {
-    padding: 0 2rem;
-  }
   &__logo {
     a {
       color: inherit;
@@ -54,13 +47,13 @@
         color: $bg !important;
       }
     }
-    @include respond(lg) {
+    @include respond(mobile-device) {
       display: none;
     }
   }
   &__menu {
     display: none;
-    @include respond(lg) {
+    @include respond(mobile-device) {
       display: block;
       padding: 1rem 0;
     }
@@ -92,7 +85,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  height: 60vh;
+  height: 510px;
   padding: 0 5rem;
   &__heading,
   &__subtile {
@@ -103,25 +96,25 @@
   &__heading {
     margin: 0;
     font-size: 5rem;
-    @include respond(sm) {
+    @include respond(mobile-device) {
       font-size: 4rem;
     }
   }
   &__subtile {
     font-size: 2.3rem;
-    @include respond(sm) {
+    @include respond(mobile-device) {
       font-size: 2rem;
     }
   }
   .ant-form {
     padding: 2rem;
-    @include respond(sm) {
+    @include respond(mobile) {
       display: none !important;
     }
   }
   &__form--mobile {
     display: none;
-    @include respond(sm) {
+    @include respond(mobile) {
       display: block;
       padding: 2rem;
     }
@@ -141,7 +134,7 @@
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(2, 1fr);
   margin-bottom: 3rem;
-  @include respond(md) {
+  @include respond(mobile-device) {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
   }
@@ -173,7 +166,7 @@
   display: grid;
   grid-template-rows: repeat(4, 1fr);
   grid-template-columns: repeat(4, 1fr);
-  @include respond(md) {
+  @include respond(mobile-device) {
     grid-template-columns: repeat(2, 1fr);
     margin-bottom: 3rem;
   }
@@ -241,7 +234,7 @@
     p {
       font-weight: 700;
     }
-    @include respond(sm) {
+    @include respond(mobile-device) {
       img {
         width: 100%;
       }
@@ -258,9 +251,6 @@
 
 /////////////////////////////////////////
 //NEWS, REVIEWS, DISCUSSIONS
-.news-reviews-discussions {
-  @include container;
-}
 
 .home-news {
   display: flex;
@@ -303,7 +293,7 @@
     & > * {
       padding-right: 1rem;
     }
-    @include respond(sm) {
+    @include respond(mobile-device) {
       align-items: flex-start;
       flex-direction: column;
     }
@@ -336,11 +326,6 @@
 }
 #components-form-demo-normal-login .login-form-button {
   width: 100%;
-}
-
-.login-form {
-  @include container;
-  padding-top: 20rem;
 }
 
 /////////////////////////////////////////////////////
@@ -521,7 +506,7 @@
     display: flex;
     & > :first-child {
       width: 50%;
-      @include respond(md) {
+      @include respond(mobile-device) {
         width: 100%;
       }
     }
@@ -529,14 +514,14 @@
       margin-left: 2rem;
       text-align: center;
       width: 25%;
-      @include respond(md) {
+      @include respond(mobile-device) {
         width: 100%;
       }
     }
-    @include respond(md) {
+    @include respond(mobile-device) {
       flex-direction: column;
       & > :last-child {
-        margin: 2rem 0 0 0;
+        margin: 1rem 0 0 0;
       }
     }
   }
@@ -586,7 +571,7 @@
     height: auto;
   }
   .ant-card {
-    @include respond(md) {
+    @include respond(mobile-device) {
       margin-top: 1rem;
     }
   }

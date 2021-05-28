@@ -7,7 +7,7 @@ const { Title } = Typography;
 
 const BrowseCars = () => {
   return (
-    <section className="browse-used-cars container">
+    <section className="browse-used-cars container--pad">
       <Title level={2}>Browse Used Cars</Title>
       <Tabs defaultActiveKey="1">
         <TabPane tab="Catagory" key="1">

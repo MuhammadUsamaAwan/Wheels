@@ -28,7 +28,7 @@ const Register = () => {
   if (isLoggedIn) router.push("/");
 
   return (
-    <Form name="normal_login" className="login-form" onFinish={onFinish}>
+    <Form className="container--section" onFinish={onFinish}>
       <Typography.Title level={2}>Register</Typography.Title>
       <Form.Item
         name="name"
@@ -85,11 +85,13 @@ const Register = () => {
         onExpired={() => setHuman(false)}
       />
 
-      <Form.Item>
+      <Form.Item className="pt-2">
         <Button type="primary" htmlType="submit" className="login-form-button">
           Register
         </Button>
-        Or <a href="/login">login now!</a>
+        <span className="pl-1">
+          Or <a href="/login">login now!</a>
+        </span>
       </Form.Item>
     </Form>
   );

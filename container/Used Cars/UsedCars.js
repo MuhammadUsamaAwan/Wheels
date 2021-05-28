@@ -1,7 +1,11 @@
 import FeaturedCars from "../../components/Used Cars/FeaturedCars";
 
 const UsedCars = () => {
-  return <FeaturedCars />;
+  return (
+    <section className="container--section">
+      <FeaturedCars />
+    </section>
+  );
 };
 
 export default UsedCars;

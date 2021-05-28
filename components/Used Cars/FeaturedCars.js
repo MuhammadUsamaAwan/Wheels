@@ -37,13 +37,13 @@ const FeaturedCars = () => {
   const usedCars = useSelector(state => state.usedCars);
   if (usedCars.isLoading) {
     return (
-      <section className="section-container">
+      <section>
         <LoadingIcon />
       </section>
     );
   }
   return (
-    <section className="section-container">
+    <section>
       <Typography.Title level={2}>Featured Used Cars for Sale</Typography.Title>
       <Carousel responsive={responsive}>
         {usedCars.result.map(car => (

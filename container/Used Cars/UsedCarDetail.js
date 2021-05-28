@@ -48,13 +48,13 @@ const UsedCarDetail = () => {
   };
   if (usedCar.isLoading) {
     return (
-      <section className="section-container">
+      <section className="container--section">
         <LoadingIcon />
       </section>
     );
   }
   return (
-    <section className="section-container used-car-details">
+    <section className="container--section--less used-car-details">
       <div className="used-car-details__cont">
         <Card>
           <h2 className="used-car-details__title">{usedCar.result.title}</h2>

@@ -73,7 +73,7 @@ const Navbar = () => {
   const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
   const [menuOpen, setMenuOpen] = useState(false);
   return (
-    <nav className="nav">
+    <nav className="nav container">
       <div className="nav__logo">
         <a href="/">Website Logo</a>
       </div>

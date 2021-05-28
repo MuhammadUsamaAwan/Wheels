@@ -23,8 +23,7 @@ const Login = () => {
 
   return (
     <Form
-      name="normal_login"
-      className="login-form"
+      className="container--section"
       initialValues={{ remember: true }}
       onFinish={onFinish}
     >
@@ -56,7 +55,6 @@ const Login = () => {
         <Form.Item name="remember" valuePropName="checked" noStyle>
           <Checkbox>Remember me</Checkbox>
         </Form.Item>
-
         <a className="login-form-forgot" href="/forgot-password">
           Forgot password
         </a>
@@ -66,7 +64,9 @@ const Login = () => {
         <Button type="primary" htmlType="submit" className="login-form-button">
           Log in
         </Button>
-        Or <a href="/register">register now!</a>
+        <span className="pl-1">
+          Or <a href="/register">register now!</a>
+        </span>
       </Form.Item>
     </Form>
   );
