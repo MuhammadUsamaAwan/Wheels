@@ -7,40 +7,47 @@ const usedVehiclesMenu = (
   <Menu>
     <Menu.Item>
       <a href="/cars" className="nav__dropdown-item">
-        <img src="/images/car.svg" className="nav__icon" /> Browse Cars
+        <img src="/images/car.svg" className="nav__icon" alt="car" /> Browse
+        Cars
       </a>
       <a href="/bikes" className="nav__dropdown-item">
-        <img src="/images/bike.svg" className="nav__icon" /> Browse Bikes
+        <img src="/images/bike.svg" className="nav__icon" alt="bike" /> Browse
+        Bikes
       </a>
       <a href="/vans" className="nav__dropdown-item">
-        <img src="/images/van.svg" className="nav__icon" /> Browse Vans
+        <img src="/images/van.svg" className="nav__icon" alt="van" /> Browse
+        Vans
       </a>
-      <a href="/bus" className="nav__dropdown-item">
-        <img src="/images/bus.svg" className="nav__icon" /> Browse Bus
+      <a href="/buses" className="nav__dropdown-item">
+        <img src="/images/bus.svg" className="nav__icon" alt="bus" /> Browse
+        Buses
       </a>
-      <a href="/truck" className="nav__dropdown-item">
+      <a href="/trucks" className="nav__dropdown-item">
         <img
           src="/images/truck.svg"
           className="nav__icon"
           style={{ transform: "rotateY(180deg)" }}
+          alt="truck"
         />
-        Browse Truck
+        Browse Trucks
       </a>
-      <a href="/rickshaw" className="nav__dropdown-item">
+      <a href="/rickshaws" className="nav__dropdown-item">
         <img
           src="/images/rickshaw.svg"
           className="nav__icon"
           style={{ transform: "rotateY(180deg)" }}
+          alt="rickshaw"
         />
-        Browse Ricksaw
+        Browse Ricksaws
       </a>
-      <a href="/tractor" className="nav__dropdown-item">
+      <a href="/tractors" className="nav__dropdown-item">
         <img
           src="/images/tractor.svg"
           className="nav__icon"
           style={{ transform: "rotateY(180deg)" }}
+          alt="tractors"
         />
-        Browse Tractor
+        Browse Tractors
       </a>
     </Menu.Item>
   </Menu>
@@ -53,7 +60,7 @@ const Navbar = () => {
     <nav className="nav container">
       <div className="nav__logo">
         <a href="/">
-          <img src="/images/logo.png" />
+          <img src="/images/logo.png" alt="logo" />
         </a>
       </div>
       <ul className="nav__links">
@@ -95,40 +102,47 @@ const Navbar = () => {
         <Collapse expandIconPosition="right" ghost>
           <Collapse.Panel header="Vehicles">
             <a href="/cars" className="nav__menu__link">
-              <img src="/images/car.svg" className="nav__icon" /> Browse Cars
+              <img src="/images/car.svg" className="nav__icon" alt="car" />{" "}
+              Browse Cars
             </a>
             <a href="/bikes" className="nav__menu__link">
-              <img src="/images/bike.svg" className="nav__icon" /> Browse Bikes
+              <img src="/images/bike.svg" className="nav__icon" alt="bike" />{" "}
+              Browse Bikes
             </a>
             <a href="/vans" className="nav__menu__link">
-              <img src="/images/van.svg" className="nav__icon" /> Browse Vans
+              <img src="/images/van.svg" className="nav__icon" alt="van" />{" "}
+              Browse Vans
             </a>
-            <a href="/bus" className="nav__menu__link">
-              <img src="/images/bus.svg" className="nav__icon" /> Browse Bus
+            <a href="/buses" className="nav__menu__link">
+              <img src="/images/bus.svg" className="nav__icon" alt="bus" />{" "}
+              Browse Buses
             </a>
-            <a href="/truck" className="nav__menu__link">
+            <a href="/trucks" className="nav__menu__link">
               <img
                 src="/images/truck.svg"
                 className="nav__icon"
                 style={{ transform: "rotateY(180deg)" }}
+                alt="truck"
               />
-              Browse Truck
+              Browse Trucks
             </a>
-            <a href="/rickshaw" className="nav__menu__link">
+            <a href="/rickshaws" className="nav__menu__link">
               <img
                 src="/images/rickshaw.svg"
                 className="nav__icon"
                 style={{ transform: "rotateY(180deg)" }}
+                alt="rickshaw"
               />
-              Browse Ricksaw
+              Browse Ricksaws
             </a>
-            <a href="/tractor" className="nav__menu__link">
+            <a href="/tractors" className="nav__menu__link">
               <img
                 src="/images/tractor.svg"
                 className="nav__icon"
                 style={{ transform: "rotateY(180deg)" }}
+                alt="tractor"
               />
-              Browse Tractor
+              Browse Tractors
             </a>
           </Collapse.Panel>
         </Collapse>

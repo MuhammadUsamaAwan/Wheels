@@ -5,8 +5,8 @@
   position: fixed;
   width: 100%;
   z-index: 1001;
-  border-bottom: 1px solid lighten($text, 80);
-  background-color: $bg;
+  border-bottom: 1px solid $nav-border-bottom;
+  background-color: $nav-bg;
   &__logo {
     img {
       width: 10rem;
@@ -29,13 +29,13 @@
       }
       &:hover {
         a {
-          color: $primary;
+          color: $nav-link;
         }
-        border-color: $primary;
+        border-color: $nav-link;
       }
     }
     &__primary {
-      background-color: $primary;
+      background-color: $nav-link;
       margin-left: 0.5rem;
       a {
         color: $bg !important;
@@ -48,7 +48,7 @@
   &__dropdown-item {
     padding: 1.5rem 1rem !important;
     &:hover {
-      background-color: darken($bg, 20);
+      background-color: $nav-dropdown-bg;
     }
   }
   &__icon {

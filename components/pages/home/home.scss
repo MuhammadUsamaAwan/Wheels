@@ -1,0 +1,102 @@
+.hero {
+  @include flex-center--col;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url(https://images5.alphacoders.com/772/thumb-1920-772308.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 510px;
+  padding: 0 5rem;
+  &__heading,
+  &__subtile {
+    text-align: center;
+    line-height: 1.2;
+    color: $hero-heading;
+  }
+  &__heading {
+    margin: 0;
+    font-size: 5rem;
+    @include respond(mobile-device) {
+      font-size: 4rem;
+    }
+  }
+  &__subtile {
+    font-size: 2.3rem;
+    @include respond(mobile-device) {
+      font-size: 2rem;
+    }
+  }
+  .ant-form {
+    padding: 2rem;
+    @include respond(mobile) {
+      display: none !important;
+    }
+  }
+  &__form--mobile {
+    display: none;
+    @include respond(mobile) {
+      display: block;
+      padding: 1rem;
+    }
+  }
+}
+
+.post-your-ad {
+  @include container;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  &__container {
+    border: 1px solid $post-ad-border;
+    padding: 2rem;
+  }
+}
+
+.vehicle-catagory {
+  @include container;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-color: $grey;
+  &__main {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2rem;
+    @include respond(mobile-device) {
+      @include flex-center--col;
+      & > * {
+        margin-bottom: 2rem;
+      }
+    }
+    & > :nth-child(1) {
+      grid-area: 1 / 1 / 2 / 5;
+    }
+    & > :nth-child(2) {
+      grid-area: 1 / 5 / 2 / 9;
+    }
+    & > :nth-child(3) {
+      grid-area: 1 / 9 / 2 / 13;
+    }
+    & > :nth-child(4) {
+      grid-area: 2 / 1 / 3 / 4;
+    }
+    & > :nth-child(5) {
+      grid-area: 2 / 4 / 3 / 7;
+    }
+    & > :nth-child(6) {
+      grid-area: 2 / 7 / 3 / 10;
+    }
+    & > :nth-child(7) {
+      grid-area: 2 / 10 / 3 / 13;
+    }
+    .ant-card-cover > img {
+      height: 20rem;
+      @include respond(mobile-device) {
+        width: 30rem;
+      }
+    }
+  }
+}

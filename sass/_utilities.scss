@@ -80,27 +80,6 @@
   @include container;
 }
 
-.container--pad {
-  @include container;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-}
-
-.container--section {
-  @include container;
-  padding-top: 15rem;
-}
-
-.container--section--less {
-  @include container;
-  padding-top: 10rem;
-  padding-bottom: 10rem;
-  @include respond(mobile-device) {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-  }
-}
-
 .ant-spin {
   @include flex-center;
 }

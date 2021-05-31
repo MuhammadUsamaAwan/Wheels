@@ -1,6 +1,23 @@
-////////////////////////////////////\
+/////////////////////////////////////
 //COLORS
-$text: #000000;
+
+//BODY
+$text: #000;
+
+//NAV
+$nav-border-bottom: lighten(#000, 80);
+$nav-bg: #fff;
+$nav-link: #1890ff;
+$nav-dropdown-bg: darken(#fff, 20);
+
+//Hero
+$hero-heading: #fff;
+
+//POST YOUR AD
+$post-ad-border: lighten(#000, 80);
+
+////////////////////////////////////
+//COLORS
 $link: #1890ff;
 $bg: #ffffff;
 $primary: #1890ff;

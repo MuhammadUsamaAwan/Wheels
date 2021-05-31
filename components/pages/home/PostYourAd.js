@@ -2,8 +2,8 @@ import { Typography, Steps, Button } from "antd";
 
 const PostYourAd = () => {
   return (
-    <section className="post-your-ad container--pad">
-      <div className="post-your-ad__cont">
+    <section className="post-your-ad">
+      <div className="post-your-ad__container">
         <Typography.Title level={2}>
           Sell Your Vehicle and Get the best Price
         </Typography.Title>
