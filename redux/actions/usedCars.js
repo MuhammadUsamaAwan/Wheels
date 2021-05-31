@@ -1,6 +1,6 @@
 import axios from "axios";
 import { GET_USED_CARS } from "../slices/usedCars";
-import { baseURL } from "../../settings/config";
+import { baseURL } from "../../config/config";
 
 // get used cars
 export const getUsedCars = () => async dispatch => {

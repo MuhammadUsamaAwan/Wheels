@@ -1,7 +1,7 @@
 import axios from "axios";
 import { GET_USED_CAR_DETAILS } from "../slices/usedCarDetails";
 import { toast } from "react-toastify";
-import { baseURL } from "../../settings/config";
+import { baseURL } from "../../config/config";
 
 //get used car
 export const getUsedCarDetails = advertisementId => async dispatch => {

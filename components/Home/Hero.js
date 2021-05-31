@@ -5,19 +5,26 @@ const { Option, OptGroup } = Select;
 const Hero = () => {
   return (
     <header className="hero">
-      <h1 className="hero__heading">Find Used Cars in Pakistan</h1>
+      <h1 className="hero__heading">Find Used Vehicles in Pakistan</h1>
       <h2 className="hero__subtile">
-        With thousands of cars, we have just the right one for you
+        With thousands of vehicles, we have just the right one for you
       </h2>
       <Form layout="inline">
         <Form.Item>
           <Input.Group compact>
-            <Form.Item
-              rules={[
-                { required: true, message: "Please input your username!" },
-              ]}
-            >
-              <Input placeholder="Car Make or Model" size="large" />
+            <Form.Item>
+              <Select placeholder="Vehicle Type" size="large">
+                <Option value="car">Car</Option>
+                <Option value="Bikes">Bikes</Option>
+                <Option value="van">Van</Option>
+                <Option value="bus">Bus</Option>
+                <Option value="truck">Truck</Option>
+                <Option value="rikshaw">Rikshaw</Option>
+                <Option value="tractor">Tractor</Option>
+              </Select>
+            </Form.Item>
+            <Form.Item>
+              <Input placeholder="Vehicle Make or Model" size="large" />
             </Form.Item>
             <Form.Item>
               <Select defaultValue="All Cities" size="large">
@@ -54,7 +61,7 @@ const Hero = () => {
       </Form>
 
       <form className="hero__form--mobile">
-        <Input placeholder="Search Cars" />
+        <Input placeholder="Search Vehicles" />
       </form>
       <Button type="default">
         Advance Search

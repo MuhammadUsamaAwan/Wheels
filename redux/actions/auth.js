@@ -1,7 +1,7 @@
 import axios from "axios";
 import { LOGIN, LOGIN_REMEMBER } from "../slices/auth";
 import { toast } from "react-toastify";
-import { baseURL } from "../../settings/config";
+import { baseURL } from "../../config/config";
 
 // login user
 export const loginAction = (email, password, remember) => async dispatch => {

@@ -1,6 +1,6 @@
 import axios from "axios";
 import { toast } from "react-toastify";
-import { baseURL } from "../../settings/config";
+import { baseURL } from "../../config/config";
 
 // post ad
 export const postAd = (token, values) => async dispatch => {

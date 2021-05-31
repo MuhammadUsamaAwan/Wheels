@@ -2,7 +2,7 @@ import axios from "axios";
 import { GET_PERSONAL_ADS } from "../slices/personalAds";
 import { GET_FAV_ADS } from "../slices/favAds";
 import { toast } from "react-toastify";
-import { baseURL } from "../../settings/config";
+import { baseURL } from "../../config/config";
 
 // get personal advertisements
 export const getPersonalAds = token => async dispatch => {

@@ -1,7 +1,7 @@
 import axios from "axios";
 import { GET_MANUFACTURERS } from "../slices/manufacturer";
 import { toast } from "react-toastify";
-import { baseURL } from "../../settings/config";
+import { baseURL } from "../../config/config";
 
 // get manufacturers
 export const getManufacturers = token => async dispatch => {

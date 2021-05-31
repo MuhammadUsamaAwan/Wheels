@@ -1,0 +1,89 @@
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  z-index: 1001;
+  border-bottom: 1px solid lighten($text, 80);
+  background-color: $bg;
+  &__logo {
+    img {
+      width: 10rem;
+    }
+  }
+  &__links {
+    display: flex;
+    margin: 0;
+    transition: all 0.3s ease-in;
+    li {
+      list-style: none;
+      align-self: center;
+      margin-bottom: -1px;
+      border-bottom: 2px solid transparent;
+      a {
+        padding: 2rem 0;
+        margin: 0 2rem;
+        display: inline-block;
+        color: inherit;
+      }
+      &:hover {
+        a {
+          color: $primary;
+        }
+        border-color: $primary;
+      }
+    }
+    &__primary {
+      background-color: $primary;
+      margin-left: 0.5rem;
+      a {
+        color: $bg !important;
+      }
+    }
+    @include respond(mobile-device) {
+      display: none;
+    }
+  }
+  &__dropdown-item {
+    padding: 1.5rem 1rem !important;
+    &:hover {
+      background-color: darken($bg, 20);
+    }
+  }
+  &__icon {
+    width: 3rem;
+    margin-right: 0.3rem;
+  }
+  &__menu {
+    display: none;
+    @include respond(mobile-device) {
+      display: block;
+      padding: 1rem 0;
+    }
+    &__link {
+      display: block;
+      color: inherit;
+      padding: 1rem 0;
+    }
+  }
+}
+
+.ant-drawer-content-wrapper {
+  margin-top: -1rem;
+}
+
+.ant-collapse-icon-position-right > .ant-collapse-item > .ant-collapse-header {
+  padding: 12px 0;
+}
+
+.ant-collapse-ghost
+  > .ant-collapse-item
+  > .ant-collapse-content
+  > .ant-collapse-content-box {
+  padding: 0 16px !important;
+}
+
+.ant-collapse-item {
+  display: block;
+}
