@@ -102,19 +102,19 @@ const Navbar = () => {
         <Collapse expandIconPosition="right" ghost>
           <Collapse.Panel header="Vehicles">
             <a href="/cars" className="nav__menu__link">
-              <img src="/images/car.svg" className="nav__icon" alt="car" />{" "}
+              <img src="/images/car.svg" className="nav__icon" alt="car" />
               Browse Cars
             </a>
             <a href="/bikes" className="nav__menu__link">
-              <img src="/images/bike.svg" className="nav__icon" alt="bike" />{" "}
+              <img src="/images/bike.svg" className="nav__icon" alt="bike" />
               Browse Bikes
             </a>
             <a href="/vans" className="nav__menu__link">
-              <img src="/images/van.svg" className="nav__icon" alt="van" />{" "}
+              <img src="/images/van.svg" className="nav__icon" alt="van" />
               Browse Vans
             </a>
             <a href="/buses" className="nav__menu__link">
-              <img src="/images/bus.svg" className="nav__icon" alt="bus" />{" "}
+              <img src="/images/bus.svg" className="nav__icon" alt="bus" />
               Browse Buses
             </a>
             <a href="/trucks" className="nav__menu__link">

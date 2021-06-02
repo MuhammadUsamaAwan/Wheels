@@ -1,7 +1,13 @@
-import Blog from "../container/Blog/Blog";
+import HeaderBlogs from "../components/pages/blog/HeaderBlogs";
+import BlogItem from "../components/pages/blog/BlogItem";
 
 const blog = () => {
-  return <Blog />;
+  return (
+    <div className="page-start">
+      <HeaderBlogs />
+      <BlogItem />
+    </div>
+  );
 };
 
 export default blog;

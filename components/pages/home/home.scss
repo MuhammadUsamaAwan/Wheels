@@ -59,7 +59,7 @@
   @include container;
   padding-top: 5rem;
   padding-bottom: 5rem;
-  background-color: $grey;
+  background-color: $vehicle-feature-bg;
   &__main {
     display: grid;
     grid-template-columns: repeat(12, 1fr);

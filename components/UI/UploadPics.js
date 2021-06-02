@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Upload, Button } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
 import { toast } from "react-toastify";
-import { postImg } from "../../settings/service";
+import { postImg } from "../../service/service";
 import { useDispatch } from "react-redux";
 import { SET_IMG } from "../../redux/slices/img";
 

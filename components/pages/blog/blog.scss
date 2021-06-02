@@ -1,0 +1,131 @@
+//HEADER
+.header-blog {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  & > *,
+  & a {
+    color: $bg;
+  }
+  &__picture {
+    background-image: url(https://static.pakwheels.com/2021/04/08-2022-Honda-Civic-Sedan-Sport-1200x781-1-1-750x430.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.5s ease;
+    width: 100%;
+    height: 100%;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  &__ribbon {
+    background-color: $secondary;
+    padding: 0 0.5rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  &__content {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 1rem;
+    &__details {
+      display: flex;
+      &__date {
+        padding-left: 2rem;
+        color: $dark-grey2;
+      }
+      &__comments {
+        margin-left: auto;
+      }
+    }
+  }
+}
+
+.header-blogs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 0.5rem;
+  :nth-child(1) {
+    grid-area: 1 / 1 / 5 / 3;
+    & .header-blog {
+      height: 40.5rem;
+    }
+  }
+  :nth-child(2) {
+    grid-area: 1 / 3 / 3 / 5;
+    & .header-blog {
+      height: 20rem;
+    }
+  }
+  :nth-child(3) {
+    grid-area: 3 / 3 / 5 / 4;
+    & .header-blog {
+      height: 20rem;
+    }
+  }
+  :nth-child(4) {
+    grid-area: 3 / 4 / 5 / 5;
+    & .header-blog {
+      height: 20rem;
+    }
+  }
+}
+
+//NORMAL BLOG
+.blog-item {
+  &__img {
+    position: relative;
+    &__ribbon {
+      position: absolute;
+      padding: 0 0.5rem;
+      background-color: $secondary;
+      color: $bg;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  &__content {
+    &__title {
+      color: inherit !important;
+    }
+    h4.ant-typography {
+      margin-bottom: 0;
+    }
+    &__details {
+      display: flex;
+      padding: 1rem 0;
+      &__author {
+        color: inherit;
+      }
+      &__date {
+        padding-left: 2rem;
+        color: $dark-grey;
+      }
+      &__comments {
+        margin-left: auto;
+      }
+    }
+  }
+  &--var1 {
+    display: flex;
+    .blog-item__img {
+      img {
+        height: 15rem;
+        width: auto;
+      }
+    }
+    .blog-item__content {
+      padding-left: 1rem;
+    }
+  }
+  &--var2 {
+    .blog-item__content {
+      padding-top: 1rem;
+    }
+  }
+}

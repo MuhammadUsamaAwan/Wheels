@@ -1,5 +1,5 @@
 import axios from "axios";
-import { baseURL } from "./config";
+import { baseURL } from "../config/config";
 import { toast } from "react-toastify";
 
 export const postImg = async userFile => {

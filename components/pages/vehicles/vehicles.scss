@@ -1,0 +1,158 @@
+.vehicles {
+  &__features {
+    @include flex-center;
+    text-align: center;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    &__item {
+      padding: 0 6rem;
+      .ant-typography {
+        margin: 0 !important;
+      }
+      img {
+        width: 4.5rem;
+        height: 4.5rem;
+      }
+    }
+  }
+}
+
+.vehicle-catagory--card {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  margin-bottom: 3rem;
+  @include respond(mobile-device) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+  &__item {
+    background-color: $bg;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 1rem 1rem 1rem 0;
+    transition: all 0.3s ease-in-out;
+    a {
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    &:hover {
+      box-shadow: 0px 0px 10px 0px rgba(84, 84, 84, 0.75);
+      -webkit-box-shadow: 0px 0px 10px 0px rgba(84, 84, 84, 0.75);
+      -moz-box-shadow: 0px 0px 10px 0px rgba(84, 84, 84, 0.75);
+    }
+  }
+}
+
+.vehicle-catagory--text {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  @include respond(mobile-device) {
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 3rem;
+  }
+  gap: 2rem;
+  a {
+    color: inherit;
+    transition: all 0.3 ease-in-out;
+    &:hover {
+      font-weight: 600;
+    }
+  }
+}
+
+.vehicle-comparison {
+  width: fit-content;
+  &__body {
+    border: 1px solid lighten($text, 80);
+  }
+  &__main {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  &__vehicle {
+    @include flex-center--col;
+    p {
+      font-weight: 700;
+    }
+    @include respond(mobile-device) {
+      img {
+        width: 100%;
+      }
+    }
+  }
+  &__vs {
+    background-color: $secondary;
+    color: $bg;
+    padding: 1rem;
+    border-radius: 50%;
+    font-weight: 700;
+  }
+}
+
+.vehicle-news {
+  display: flex;
+  padding-bottom: 2rem;
+  &__content {
+    padding-left: 2rem;
+  }
+  &__title {
+    font-weight: 700;
+    font-size: 1.8rem;
+  }
+  &__date {
+    color: $dark-grey;
+  }
+  img {
+    height: 12rem;
+  }
+}
+
+.vehicle-review {
+  &__container {
+    display: flex;
+    img {
+      height: 9rem;
+      border: 1px solid lighten($text, 80);
+      margin-right: 2rem;
+    }
+    a {
+      display: block;
+    }
+  }
+  &__title {
+    font-weight: 700;
+  }
+  &__vehicle {
+    color: inherit;
+  }
+  &__details {
+    @include flex-center;
+    & > * {
+      padding-right: 1rem;
+    }
+    @include respond(mobile-device) {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+}
+
+.vehicle-discussion {
+  &__title {
+    font-weight: 700;
+    font-size: 1.8rem;
+  }
+  &__details {
+    display: flex;
+    & > * {
+      padding-right: 1rem;
+    }
+  }
+}

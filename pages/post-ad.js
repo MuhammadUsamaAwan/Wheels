@@ -1,7 +1,7 @@
-import PostAd from "../container/PostAd/PostAd";
+import VehicleCatagory from "../components/pages/home/VehicleCatagory";
 
 const postAd = () => {
-  return <PostAd />;
+  return <VehicleCatagory />;
 };
 
 export default postAd;

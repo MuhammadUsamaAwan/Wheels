@@ -1,0 +1,33 @@
+.advertisement-item {
+  border: 1px solid $grey;
+  margin-right: 2rem;
+  &__img-box {
+    position: relative;
+    background-color: $text;
+    @include flex-center;
+    overflow: hidden;
+    &__ribbon {
+      position: absolute;
+      background-color: $secondary;
+      padding: 0.5rem;
+      color: $bg;
+      text-transform: uppercase;
+      top: 0;
+      left: 0;
+    }
+    img {
+      max-width: auto;
+      height: 20rem;
+    }
+  }
+  &__details {
+    padding: 1rem;
+    &__title {
+      font-weight: 700;
+      font-size: 1.8rem;
+    }
+    &__price {
+      color: $tertiary;
+    }
+  }
+}
