@@ -23,7 +23,7 @@ const login = () => {
 
   return (
     <Form
-      className="container--section"
+      className="container pt-15"
       initialValues={{ remember: true }}
       onFinish={onFinish}
     >

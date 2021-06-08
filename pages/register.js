@@ -28,7 +28,7 @@ const Register = () => {
   if (isLoggedIn) router.push("/");
 
   return (
-    <Form className="container--section" onFinish={onFinish}>
+    <Form className="container pt-15" onFinish={onFinish}>
       <Typography.Title level={2}>Register</Typography.Title>
       <Form.Item
         name="name"

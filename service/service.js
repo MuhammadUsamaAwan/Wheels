@@ -31,3 +31,18 @@ export const addFavorite = async (token, advertisementId) => {
     console.error("Internal Server Error");
   }
 };
+
+// post ad
+export const postAd = async (token, values) => {
+  const config = {
+    headers: {
+      Authorization: token,
+    },
+  };
+  try {
+    await axios.post(`${baseURL}/api/create-advertisement`, values, config);
+    toast.success("Ad Successfully Posted!");
+  } catch (err) {
+    toast.error(err.response.data.message);
+  }
+};

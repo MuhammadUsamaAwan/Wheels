@@ -96,7 +96,7 @@
 
 ////////////////////////////////////
 //PADDINGS
-@for $i from 1 to 6 {
+@for $i from 1 to 16 {
   .pt-#{$i} {
     padding-top: $i + rem;
   }
