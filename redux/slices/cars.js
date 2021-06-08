@@ -13,8 +13,15 @@ const slice = createSlice({
         isLoading: false,
       };
     },
+    GET_CAR_DETAILS: (state, action) => {
+      return {
+        ...state,
+        ...action.payload,
+        isLoading: false,
+      };
+    },
   },
 });
 
-export const { GET_CARS } = slice.actions;
+export const { GET_CARS, GET_CAR_DETAILS } = slice.actions;
 export default slice.reducer;

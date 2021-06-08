@@ -81,7 +81,6 @@
 }
 
 .page-start {
-  @include container;
   padding-top: 10rem;
   @include respond(laptop) {
     padding-top: 7rem;

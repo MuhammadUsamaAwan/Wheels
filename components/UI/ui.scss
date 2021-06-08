@@ -1,3 +1,5 @@
+@import "~react-image-gallery/styles/css/image-gallery.css";
+
 .advertisement-item {
   border: 1px solid $grey;
   margin-right: 2rem;
@@ -28,6 +30,126 @@
     }
     &__price {
       color: $tertiary;
+    }
+  }
+}
+
+.single-adv {
+  @include container;
+  display: flex;
+  @include respond(mobile-device) {
+    flex-direction: column;
+  }
+  background-color: $single-ad-bg;
+  & > div {
+    background-color: $single-ad-div-bg;
+    padding: 1rem 2rem;
+    margin-top: 1rem;
+  }
+  & > :first-child {
+    width: 60%;
+    @include respond(mobile-device) {
+      width: 100%;
+    }
+    .image-gallery-image {
+      background-color: black;
+    }
+  }
+  & > :last-child {
+    width: 40%;
+    margin-left: 1.5rem;
+    text-align: center;
+    @include respond(mobile-device) {
+      width: 100%;
+      margin-top: 1.5rem;
+      margin-left: 0;
+    }
+  }
+  &__title {
+    margin: 0 !important;
+  }
+  &__city {
+    color: $single-ad-city;
+    img {
+      height: 1.6rem;
+      width: 1.6rem;
+    }
+  }
+  &__images {
+    position: relative;
+    .anticon-heart {
+      color: $fav;
+      padding: 0.5rem;
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      background-color: $fav-bg;
+      cursor: pointer;
+      svg {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+  }
+  &__featured {
+    background-color: $featured-bg;
+    color: $featured;
+    padding: 0.5rem 1rem;
+    position: absolute;
+    top: 0;
+  }
+  &__feature {
+    text-align: center;
+    @include respond(mobile-device) {
+      .ant-card-body {
+        padding: 5px !important;
+      }
+    }
+  }
+  &__other-feature {
+    margin-bottom: 2rem;
+    & > * {
+      padding: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    & > :first-child {
+      border-top: 1px solid $single-ad-border;
+      border-bottom: 1px solid $single-ad-border;
+    }
+    & > *:not(:first-child) {
+      border-bottom: 1px solid $single-ad-border;
+    }
+  }
+  &__price {
+    .ant-statistic-content {
+      color: $price !important;
+      font-weight: 600;
+      font-size: 3rem;
+    }
+  }
+  &__phone {
+    @include flex-center;
+    div {
+      @include flex-center;
+      background-color: $phone-bg;
+      padding: 1rem 4rem;
+      transition: all 0.2s ease-in-out;
+      cursor: pointer;
+      &:hover {
+        background-color: darken($phone-bg, 20);
+      }
+    }
+    img {
+      display: inline-block;
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+    span {
+      padding-left: 0.5rem;
+      font-size: 2.5rem;
+      color: #fff;
     }
   }
 }

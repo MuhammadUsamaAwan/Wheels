@@ -13,7 +13,11 @@ const cars = () => {
     <>
       <Hero />
       <VechicleFeatures />
-      <AdvertisementItems heading="Featured Cars for Sell" vehicles={cars} />
+      <AdvertisementItems
+        heading="Featured Cars for Sell"
+        vehicles={cars}
+        type="car"
+      />
       <div className="container pd-5 pt-5">
         <VehicleCatagory heading="Browse Used Cars by Category" />
       </div>

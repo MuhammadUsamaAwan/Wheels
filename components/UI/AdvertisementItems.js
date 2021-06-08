@@ -29,7 +29,7 @@ const responsive = {
   },
 };
 
-const AdvertisementItems = ({ heading, vehicles }) => {
+const AdvertisementItems = ({ heading, vehicles, type }) => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getAdvertisements());
@@ -53,6 +53,7 @@ const AdvertisementItems = ({ heading, vehicles }) => {
             title={vehicle.title}
             price={vehicle.price}
             city={vehicle.city}
+            type={type}
           />
         ))}
       </Carousel>
