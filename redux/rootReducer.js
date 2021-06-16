@@ -6,6 +6,7 @@ import personalAds from "./slices/personalAds";
 import favAds from "./slices/favAds";
 import cars from "./slices/cars";
 import carDetails from "./slices/carDetails";
+import filteredAds from "./slices/filteredAds";
 
 export default combineReducers({
   auth,
@@ -15,4 +16,5 @@ export default combineReducers({
   img,
   personalAds,
   favAds,
+  filteredAds
 });

@@ -1,19 +1,27 @@
 import { Input, Select, Button, Form } from "antd";
 import { SearchOutlined, ArrowRightOutlined } from "@ant-design/icons";
 const { Option, OptGroup } = Select;
+import { useDispatch } from "react-redux";
+import {searchAdvertisement} from "../../redux/actions/advertisements";
 
 const Hero = () => {
+  const dispatch = useDispatch();
+  const onFinish = (values) => {
+    values.minPrice = values.minPrice * 100000;
+    values.maxPrice = values.maxPrice * 100000;
+    dispatch(searchAdvertisement(values));
+  }
   return (
     <header className="hero">
       <h1 className="hero__heading">Find Used Vehicles in Pakistan</h1>
       <h2 className="hero__subtile">
         With thousands of vehicles, we have just the right one for you
       </h2>
-      <Form layout="inline">
+      <Form layout="inline" onFinish={onFinish}>
         <Form.Item>
           <Input.Group compact>
-            <Form.Item>
-              <Select placeholder="Vehicle Type" size="large">
+            <Form.Item name="vehicleType">
+              <Select placeholder="Vehicle Type" size="large" allowClear>
                 <Option value="car">Car</Option>
                 <Option value="Bikes">Bikes</Option>
                 <Option value="van">Van</Option>
@@ -26,8 +34,8 @@ const Hero = () => {
             <Form.Item>
               <Input placeholder="Vehicle Make or Model" size="large" />
             </Form.Item>
-            <Form.Item>
-              <Select defaultValue="All Cities" size="large">
+            <Form.Item name="city">
+              <Select placeholder="City" size="large" allowClear>
                 <Option value="All Cities">All Cities</Option>
                 <OptGroup label="Popular Cities">
                   <Option value="Karachi">Karachi</Option>
@@ -40,16 +48,12 @@ const Hero = () => {
                 </OptGroup>
               </Select>
             </Form.Item>
-            <Form.Item>
-              <Select placeholder="Price Range" size="large">
-                <Option value="5lacs">5 Lacs</Option>
-                <Option value="10lacs">10 Lacs</Option>
-                <Option value="15lacs">15 Lacs</Option>
-                <Option value="20lacs">20 Lacs</Option>
-                <Option value="25lacs">25 Lacs</Option>
-                <Option value="30lacs">30 Lacs</Option>
-              </Select>
-            </Form.Item>
+            <Form.Item name="minPrice">
+              <Input placeholder="Min Price (lacs)" size="large" style={{width: "14rem"}} />
+              </Form.Item>
+              <Form.Item name="maxPrice">
+              <Input placeholder="Max Price (lacs)" size="large" style={{width: "14rem"}} />
+              </Form.Item>
             <Button
               type="primary"
               htmlType="submit"

@@ -2,6 +2,7 @@ import axios from "axios";
 import { baseURL } from "../../config/config";
 import { GET_CARS } from "../slices/cars";
 import { GET_CAR_DETAILS } from "../slices/carDetails";
+import { FILTERED_ADS } from "../slices/filteredAds";
 
 // get all advertisements
 export const getAdvertisements = () => async dispatch => {
@@ -28,6 +29,27 @@ export const getSingleAdvertisement = advertisementId => async dispatch => {
       config
     );
     dispatch(GET_CAR_DETAILS(res.data));
+  } catch (err) {
+    console.error("Internal Server Error");
+  }
+};
+
+
+// search advertisements
+export const searchAdvertisement = values => async dispatch => {
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+  const body = JSON.stringify({ values });
+  try {
+    const res = await axios.post(
+      `${baseURL}/filter`,
+      body,
+      config
+    );
+    dispatch(FILTERED_ADS(res.data));
   } catch (err) {
     console.error("Internal Server Error");
   }
