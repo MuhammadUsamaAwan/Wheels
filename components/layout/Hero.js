@@ -21,9 +21,9 @@ const Hero = () => {
         <Form.Item>
           <Input.Group compact>
             <Form.Item name="vehicleType">
-              <Select placeholder="Vehicle Type" size="large" allowClear>
+              <Select placeholder="Vehicle Type" size="large" allowClear  style={{width: "14rem"}}>
                 <Option value="car">Car</Option>
-                <Option value="Bikes">Bikes</Option>
+                <Option value="bike">Bikes</Option>
                 <Option value="van">Van</Option>
                 <Option value="bus">Bus</Option>
                 <Option value="truck">Truck</Option>
@@ -31,11 +31,11 @@ const Hero = () => {
                 <Option value="tractor">Tractor</Option>
               </Select>
             </Form.Item>
-            <Form.Item>
-              <Input placeholder="Vehicle Make or Model" size="large" />
+            <Form.Item name="text">
+              <Input placeholder="Vehicle Make or Model" size="large" style={{width: "20rem"}} />
             </Form.Item>
             <Form.Item name="city">
-              <Select placeholder="City" size="large" allowClear>
+              <Select placeholder="City" size="large" allowClear  style={{width: "14rem"}}>
                 <Option value="All Cities">All Cities</Option>
                 <OptGroup label="Popular Cities">
                   <Option value="Karachi">Karachi</Option>

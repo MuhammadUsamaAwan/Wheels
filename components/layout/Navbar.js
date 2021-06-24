@@ -66,7 +66,7 @@ const Navbar = () => {
       <ul className="nav__links">
         <li>
           <Dropdown overlay={usedVehiclesMenu} placement="bottomCenter">
-            <a href="javascript:void(0)">
+            <a href="#">
               Vehicles <DownOutlined />
             </a>
           </Dropdown>
@@ -78,11 +78,7 @@ const Navbar = () => {
           <a href="/videos">Videos</a>
         </li>
         <li>
-          {isLoggedIn ? (
-            <a href="/profile">Profile</a>
-          ) : (
-            <a href="/login">Login</a>
-          )}
+            <a href={isLoggedIn ? "/profile" : "/login"}>{isLoggedIn ? "Profile" : "Login"}</a>
         </li>
 
         <li className="nav__links__primary">

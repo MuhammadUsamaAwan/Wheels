@@ -82,14 +82,11 @@ const postCar = () => {
   ];
 
   const onFinish = (values) => {
-    const images = {
-      images: img,
-    };
-    values = { ...values, images };
+    values = { ...values, images: img };
     values = { ...values, vehicleType: "car" };
     values.modelId = values.modelId[1];
     if (values.other) {
-      values.other = values.other.join(" ");
+      values.other = values.other.join(",");
     }
     postAd(token, values);
   };

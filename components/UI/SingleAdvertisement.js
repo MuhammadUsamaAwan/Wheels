@@ -1,5 +1,5 @@
 import { Typography, Statistic, Row, Col, Card } from "antd";
-import { HeartOutlined } from "@ant-design/icons";
+import { HeartOutlined, HeartFilled } from "@ant-design/icons";
 import ImageGallery from "react-image-gallery";
 import { addFavorite } from "../../service/service";
 import { useSelector } from "react-redux";
@@ -35,22 +35,29 @@ const SingleAdvertisement = ({ vehicle, id }) => {
           {!vehicle.featured && (
             <div className="single-adv__featured">Featured</div>
           )}
-          <HeartOutlined onClick={addFav} />
+          {vehicle.isFavorite ? <HeartOutlined onClick={addFav} />
+          : <HeartFilled onClick={addFav} />
+          }
         </div>
         <Row gutter={16} className="pb-2 pt-2">
-          <Col span={8}>
+          <Col span={6}>
             <Card className="single-adv__feature">
               <Statistic title="Model Year" value={vehicle.modelYear} />
             </Card>
           </Col>
-          <Col span={8}>
+          <Col span={6}>
             <Card className="single-adv__feature">
               <Statistic title="Mileage" value={vehicle.milage} />
             </Card>
           </Col>
-          <Col span={8}>
+          <Col span={6}>
             <Card className="single-adv__feature">
               <Statistic title="Engine Type" value={vehicle.engineType} />
+            </Card>
+          </Col>
+          <Col span={6}>
+            <Card className="single-adv__feature">
+              <Statistic title="Transmission" value={vehicle.transmission} />
             </Card>
           </Col>
         </Row>
@@ -64,6 +71,14 @@ const SingleAdvertisement = ({ vehicle, id }) => {
             <div>{vehicle.local ? "Local" : "Imported"}</div>
           </div>
           <div>
+            <div>Body Type</div>
+            <div>{vehicle.bodyType ? vehicle.bodyType : "N/A"}</div>
+          </div>
+          <div>
+            <div>Engine Capacity</div>
+            <div>{vehicle.power ? vehicle.power : "N/A"}</div>
+          </div>
+          <div>
             <div>Exterior Color</div>
             <div>{vehicle.color ? vehicle.color : "N/A"}</div>
           </div>
@@ -72,7 +87,15 @@ const SingleAdvertisement = ({ vehicle, id }) => {
             <div>{vehicle.brandNew ? "Yes" : "No"}</div>
           </div>
         </div>
-        <Typography.Title level={2} className="single-adv__seller-heading">
+        <Typography.Title level={3} className="single-adv__seller-heading">
+          Car Features
+        </Typography.Title>
+        <div className="single-adv__features">
+          {vehicle.other.map(feature => (
+            <div id={feature}>{feature}</div>
+          ))}
+        </div>
+        <Typography.Title level={3} className="single-adv__seller-heading">
           Seller's Comments
         </Typography.Title>
         <p>{vehicle.description}</p>
@@ -88,6 +111,15 @@ const SingleAdvertisement = ({ vehicle, id }) => {
             <img src="/images/phone-call.svg" alt="phone" />
             <span>{vehicle.contact}</span>
           </div>
+        </div>
+        <Typography.Title level={3} className="single-adv__seller-heading">
+          Seller's Info
+        </Typography.Title>
+        <div className="single-adv__dealer">
+          <div>Dealer: <span>{vehicle.userId.name}</span></div>
+          <div>Email: <span>{vehicle.userId.email}</span></div>
+          <div>Verified: <span>{vehicle.userId.smsVerification ? "Yes" : "No"}</span></div>
+          <div>Member Since: <span>{vehicle.userId.createdAt}</span></div>
         </div>
       </div>
     </div>

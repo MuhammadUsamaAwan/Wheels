@@ -131,6 +131,7 @@
   }
   &__phone {
     @include flex-center;
+    margin-bottom: 2rem;
     div {
       @include flex-center;
       background-color: $phone-bg;
@@ -151,5 +152,13 @@
       font-size: 2.5rem;
       color: #fff;
     }
+  }
+  &__dealer {
+    text-align: left;
+  }
+  &__features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding-bottom: 2rem;
   }
 }

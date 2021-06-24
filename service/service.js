@@ -46,3 +46,19 @@ export const postAd = async (token, values) => {
     toast.error(err.response.data.message);
   }
 };
+
+// update profile
+export const updateProfile = async (token, values) => {
+  const config = {
+    headers: {
+      Authorization: token,
+    },
+  };
+  const body = JSON.stringify({ values });
+  try {
+    await axios.post(`${baseURL}/api/create-advertisement`, body, config);
+    toast.success("Updated Successfully!");
+  } catch (err) {
+    toast.error(err.response.data.message);
+  }
+};

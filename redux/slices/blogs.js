@@ -1,12 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const slice = createSlice({
-  name: "cars",
+  name: "blogs",
   initialState: {
     isLoading: true,
   },
   reducers: {
-    GET_CARS: (state, action) => {
+    GET_ALL_BLOGS: (state, action) => {
       return {
         ...state,
         ...action.payload,
@@ -16,5 +16,5 @@ const slice = createSlice({
   },
 });
 
-export const { GET_CARS } = slice.actions;
+export const { GET_ALL_BLOGS } = slice.actions;
 export default slice.reducer;
