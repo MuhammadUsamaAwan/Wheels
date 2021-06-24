@@ -5,14 +5,14 @@ const slice = createSlice({
   name: "auth",
   initialState: {
     token: Cookie.get("token"),
-    user: Cookie.get("user"),
+    user: Cookie.get("user") ? JSON.parse(Cookie.get("user")) : {},
     isLoggedIn: Cookie.get("isLoggedIn") || false,
   },
   reducers: {
     LOGIN: (state, action) => {
       return {
-        ...state,
-        ...action.payload,
+        token: action.payload.token,
+        user: action.payload.user,
         isLoggedIn: true,
       };
     },
@@ -21,8 +21,8 @@ const slice = createSlice({
       Cookie.set("token", action.payload.token);
       Cookie.set("isLoggedIn", true);
       return {
-        ...state,
-        ...action.payload,
+        token: action.payload.token,
+        user: action.payload.user,
         isLoggedIn: true,
       };
     },

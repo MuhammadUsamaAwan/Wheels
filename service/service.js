@@ -55,8 +55,9 @@ export const updateProfile = async (token, values) => {
     },
   };
   const body = JSON.stringify({ values });
+  toast.success("Profile Updated!")
   try {
-    await axios.post(`${baseURL}/api/create-advertisement`, body, config);
+    await axios.post(`${baseURL}/api/user/update`, body, config);
     toast.success("Updated Successfully!");
   } catch (err) {
     toast.error(err.response.data.message);

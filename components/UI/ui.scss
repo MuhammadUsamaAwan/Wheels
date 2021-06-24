@@ -100,11 +100,6 @@
   }
   &__feature {
     text-align: center;
-    @include respond(mobile-device) {
-      .ant-card-body {
-        padding: 5px !important;
-      }
-    }
   }
   &__other-feature {
     margin-bottom: 2rem;

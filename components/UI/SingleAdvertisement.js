@@ -39,23 +39,23 @@ const SingleAdvertisement = ({ vehicle, id }) => {
           : <HeartFilled onClick={addFav} />
           }
         </div>
-        <Row gutter={16} className="pb-2 pt-2">
-          <Col span={6}>
+        <Row gutter={24} className="pb-2 pt-2">
+          <Col lg={6} md={12}>
             <Card className="single-adv__feature">
               <Statistic title="Model Year" value={vehicle.modelYear} />
             </Card>
           </Col>
-          <Col span={6}>
+          <Col lg={6} md={12}>
             <Card className="single-adv__feature">
               <Statistic title="Mileage" value={vehicle.milage} />
             </Card>
           </Col>
-          <Col span={6}>
+          <Col lg={6} md={12}>
             <Card className="single-adv__feature">
               <Statistic title="Engine Type" value={vehicle.engineType} />
             </Card>
           </Col>
-          <Col span={6}>
+          <Col lg={6} md={12}>
             <Card className="single-adv__feature">
               <Statistic title="Transmission" value={vehicle.transmission} />
             </Card>

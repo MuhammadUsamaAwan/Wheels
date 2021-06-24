@@ -1,0 +1,17 @@
+.profile {
+    background-color: $profile-bg;
+    &__container {
+        margin: 2rem 0;
+    }
+    &__user-info {
+        display: flex;
+        align-items: center;
+        // justify-content: center;
+        .ant-avatar {
+            margin-right: 2rem;
+        }
+        .ant-typography {
+            margin: 0;
+        }
+    }
+}
