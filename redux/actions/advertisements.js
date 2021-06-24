@@ -42,11 +42,12 @@ export const searchAdvertisement = values => async dispatch => {
       "Content-Type": "application/json",
     },
   };
-  const body = JSON.stringify({ values });
+  Object.keys(values).forEach(key => values[key] === undefined && delete values[key])
+  console.log(values)
   try {
     const res = await axios.post(
       `${baseURL}/filter`,
-      body,
+      values,
       config
     );
     dispatch(FILTERED_ADS(res.data));

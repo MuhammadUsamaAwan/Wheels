@@ -157,3 +157,55 @@
     padding-bottom: 2rem;
   }
 }
+
+.vehicle-result {
+  position: relative;
+  .ant-card {
+    border-color: $border;
+  }
+  .ant-card-body {
+    padding: 1rem;
+    display: flex;
+  }
+  &__featured {
+    position: absolute;
+    color: $featured;
+    background-color: $featured-bg;
+    padding: 0.5rem;
+    top: 0;
+    left: 0;
+  }
+  &__img-box {
+    width: 16rem;
+    height: 12rem;
+    background-color: black;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      width: 100%;
+      min-height: 100%;
+    }
+  }
+  &__main {
+    padding-left: 2rem;
+    &__title {
+      color: $vehicle-result-title;
+      font-weight: 700;
+      font-size: 16px;
+    }
+    &__price {
+      font-weight: 600;
+    }
+    &__features {
+      display: flex;
+      & > div {
+        &::after {
+          content: "|";
+          padding: 0 1rem;
+        }
+      }
+    }
+  }
+}

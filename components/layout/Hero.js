@@ -67,7 +67,7 @@ const Hero = () => {
       <form className="hero__form--mobile">
         <Input placeholder="Search Vehicles" />
       </form>
-      <Button type="default">
+      <Button type="default" href="/search">
         Advanced Filters
         <ArrowRightOutlined />
       </Button>

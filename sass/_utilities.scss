@@ -90,6 +90,10 @@
   }
 }
 
+.grey-bg {
+  background-color: $grey-bg;
+}
+
 .ant-spin {
   @include flex-center;
 }
