@@ -4,7 +4,7 @@ import LoadingIcon from "../components/UI/LoadingIcon";
 import { useSelector, useDispatch } from "react-redux";
 import { getManufacturers } from "../redux/actions/manufacturer";
 import UploadPics from "../components/UI/UploadPics";
-import { postAd } from "../redux/actions/postAd";
+import { postAd } from "../service/service";
 import { useRouter } from "next/router";
 import { toast } from "react-toastify";
 
@@ -50,7 +50,7 @@ const SellCar = () => {
     values = { ...values, images: img, vehicleType: "car" };
     if (img.length < 2)
       toast.error("Please upload atleast 2 images of your car");
-    else dispatch(postAd(token, values));
+    else postAd(token, values);
   };
 
   return (
