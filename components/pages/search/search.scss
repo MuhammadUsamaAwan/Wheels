@@ -1,0 +1,26 @@
+.search {
+  &__container {
+    display: flex;
+    & > :first-child {
+      flex: 1;
+    }
+    & > :last-child {
+      flex: 3;
+      text-align: center;
+      padding-left: 1rem;
+    }
+  }
+  &__filters__heading {
+    background-color: $primary;
+    color: $bg;
+    font-weight: 500;
+    padding: 1rem;
+  }
+  &__result__head {
+    display: flex;
+    padding: 1rem;
+    font-size: 14px;
+    background-color: $bg;
+    border: 1px solid $border;
+  }
+}
