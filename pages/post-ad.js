@@ -3,20 +3,9 @@ import { Typography, Card } from "antd";
 import { useSelector } from "react-redux";
 import { useRouter } from "next/router";
 import { toast } from "react-toastify";
+import { parseCookies } from "../utils/parseCookies";
 
 const postAd = () => {
-  const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
-  const router = useRouter();
-  useEffect(() => {
-    if (!isLoggedIn) {
-      toast.warning("Please login to post your ad!");
-      router.push("/login");
-    }
-  }, []);
-
-  if (!isLoggedIn) {
-    return <></>;
-  }
   return (
     <section className="page-start container">
       <Typography.Title level={2}>Browse Vehicles</Typography.Title>
@@ -122,5 +111,14 @@ const postAd = () => {
     </section>
   );
 };
+
+export async function getServerSideProps({ req, res }) {
+  const cookies = parseCookies(req);
+  if (cookies.isLoggedIn) {
+    res.writeHead(303, { Location: "/" });
+    res.end();
+  }
+  return { props: {} };
+}
 
 export default postAd;

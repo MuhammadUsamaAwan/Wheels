@@ -8,6 +8,7 @@ import {
 import { useSelector, useDispatch } from "react-redux";
 import { loginAction } from "../redux/actions/auth";
 import { useRouter } from "next/router";
+import { parseCookies } from "../utils/parseCookies";
 
 const login = () => {
   const dispatch = useDispatch();
@@ -18,8 +19,6 @@ const login = () => {
     dispatch(loginAction(email, password, remember));
     if (isLoggedIn) router.push("/");
   };
-
-  if (isLoggedIn) router.push("/");
 
   return (
     <Form
@@ -71,5 +70,15 @@ const login = () => {
     </Form>
   );
 };
+
+export async function getServerSideProps({ req, res }) {
+  const cookies = parseCookies(req);
+  if (cookies.isLoggedIn) {
+    res.writeHead(303, { Location: "/" });
+    res.end();
+  }
+
+  return { props: {} };
+}
 
 export default login;

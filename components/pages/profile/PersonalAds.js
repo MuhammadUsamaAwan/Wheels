@@ -94,12 +94,12 @@ const PersonalAds = () => {
 
     const dataSource = [
       {
-        key: personalAds.result._id,
-        title: personalAds.result.title,
-        model: personalAds.result.modelYear,
-        city: personalAds.result.city,
-        vehicleType: personalAds.result.vehicleType,
-        price: `${personalAds.result.price/100000} lacs`
+        key: personalAds?.result?._id,
+        title: personalAds?.result?.title,
+        model: personalAds?.result?.modelYear,
+        city: personalAds?.result?.city,
+        vehicleType: personalAds?.result?.vehicleType,
+        price: `${personalAds?.result?.price/100000} lacs`
       }
     ]
     const columns = [
